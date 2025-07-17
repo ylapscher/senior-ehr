@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import ExecutiveDashboard from './components/ExecutiveDashboard';
 import ResidentProfile from './components/ResidentProfile';
+import ComplianceReports from './components/ComplianceReports';
 
 function App() {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -16,6 +17,8 @@ function App() {
         return <ExecutiveDashboard currentView={currentView} onNavigate={handleNavigate} />;
       case 'resident-profile':
         return <ResidentProfile currentView={currentView} onNavigate={handleNavigate} />;
+      case 'reports':
+        return <ComplianceReports currentView={currentView} onNavigate={handleNavigate} />;
       default:
         return <ExecutiveDashboard currentView={currentView} onNavigate={handleNavigate} />;
     }
