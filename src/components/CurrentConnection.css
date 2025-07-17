@@ -1,0 +1,425 @@
+/* Current Connection Component Styles */
+
+.current-connection {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.connection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.connection-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.connection-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Connection Info Grid */
+.connection-info {
+  margin-bottom: 2rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-section {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.info-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.info-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  min-width: 100px;
+}
+
+.info-value {
+  font-size: 0.875rem;
+  color: #1f2937;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Connection Status */
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+}
+
+.connection-status.green {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.connection-status.orange {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.connection-status.red {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.connection-status.blue {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.connection-status.gray {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Recent Activity */
+.recent-activity {
+  margin-bottom: 2rem;
+}
+
+.recent-activity h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.activity-item:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.activity-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.activity-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.25rem 0;
+}
+
+.activity-time {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Health Status */
+.health-status {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.health-indicator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.health-bar {
+  flex: 1;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.health-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.health-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+  min-width: 140px;
+}
+
+.health-description {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .current-connection {
+    padding: 1.5rem;
+  }
+  
+  .connection-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .connection-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .info-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .info-section {
+    padding: 1.25rem;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .info-label {
+    min-width: auto;
+  }
+  
+  .info-value {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .current-connection {
+    padding: 1.25rem;
+  }
+  
+  .connection-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .connection-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .connection-actions .action-btn {
+    justify-content: center;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-section {
+    padding: 1rem;
+  }
+  
+  .info-section h3 {
+    font-size: 0.9rem;
+  }
+  
+  .info-label,
+  .info-value {
+    font-size: 0.8rem;
+  }
+  
+  .activity-item {
+    padding: 0.75rem;
+  }
+  
+  .activity-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.875rem;
+  }
+  
+  .activity-title {
+    font-size: 0.8rem;
+  }
+  
+  .activity-time {
+    font-size: 0.7rem;
+  }
+  
+  .health-indicator {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .health-label {
+    min-width: auto;
+  }
+  
+  .health-description {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .current-connection {
+    padding: 1rem;
+  }
+  
+  .connection-header h2 {
+    font-size: 1.125rem;
+  }
+  
+  .info-section {
+    padding: 0.75rem;
+  }
+  
+  .info-section h3 {
+    font-size: 0.85rem;
+  }
+  
+  .info-label,
+  .info-value {
+    font-size: 0.75rem;
+  }
+  
+  .connection-status {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .activity-item {
+    padding: 0.5rem;
+  }
+  
+  .activity-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+  
+  .activity-title {
+    font-size: 0.75rem;
+  }
+  
+  .activity-time {
+    font-size: 0.65rem;
+  }
+  
+  .health-status {
+    padding: 1rem;
+  }
+  
+  .health-label {
+    font-size: 0.8rem;
+  }
+  
+  .health-description {
+    font-size: 0.75rem;
+  }
+}
+
+/* Animation for health bar */
+@keyframes healthPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.health-fill {
+  animation: healthPulse 2s ease-in-out infinite;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .info-section {
+    border-width: 2px;
+  }
+  
+  .activity-item {
+    border-width: 2px;
+  }
+  
+  .health-status {
+    border-width: 2px;
+  }
+}
+
+/* Focus indicators */
+.connection-actions .action-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}

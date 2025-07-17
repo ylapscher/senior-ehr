@@ -6,7 +6,8 @@ const Sidebar = ({ currentView, onNavigate }) => {
     { id: 'dashboard', label: 'Dashboard', icon: '📊', view: 'dashboard' },
     { id: 'residents', label: 'Residents', icon: '👥', view: 'resident-profile' },
     { id: 'staff-tasks', label: 'Staff Tasks', icon: '✓', view: 'staff-tasks' },
-    { id: 'reports', label: 'Reports', icon: '📈', view: 'reports' }
+    { id: 'reports', label: 'Reports', icon: '📈', view: 'reports' },
+    { id: 'property-management', label: 'PMS Integration', icon: '🏢', view: 'property-management' }
   ];
 
   return (

@@ -1,0 +1,386 @@
+/* PMS Vendor Selector Component Styles */
+
+.pms-vendor-selector {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.selector-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.selector-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.selector-description {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Vendor Grid */
+.vendor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.vendor-card {
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.vendor-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+.vendor-card.selected {
+  border-color: #3b82f6;
+  background: #f0f9ff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.vendor-card.popular {
+  border-color: #f59e0b;
+}
+
+.vendor-card.popular.selected {
+  border-color: #3b82f6;
+}
+
+/* Popular Badge */
+.popular-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Vendor Header */
+.vendor-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.vendor-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.vendor-info {
+  flex: 1;
+}
+
+.vendor-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.25rem 0;
+}
+
+.vendor-category {
+  font-size: 0.75rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+/* Vendor Description */
+.vendor-description {
+  font-size: 0.875rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+
+/* Vendor Features */
+.vendor-features {
+  margin-bottom: 1rem;
+}
+
+.vendor-features h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 0.5rem 0;
+}
+
+.vendor-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vendor-features li {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.vendor-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.vendor-features li.more-features {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.vendor-features li.more-features::before {
+  content: '…';
+  color: #9ca3af;
+}
+
+/* Vendor Footer */
+.vendor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.api-support {
+  font-size: 0.75rem;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.selected-indicator {
+  font-size: 0.75rem;
+  color: #3b82f6;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Selection Summary */
+.selection-summary {
+  background: #f0f9ff;
+  border: 1px solid #3b82f6;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.summary-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary-text {
+  font-size: 0.875rem;
+  color: #1e40af;
+}
+
+.change-selection-btn {
+  background: none;
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.change-selection-btn:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .vendor-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  
+  .vendor-card {
+    padding: 1.25rem;
+  }
+  
+  .vendor-header {
+    gap: 0.75rem;
+  }
+  
+  .vendor-logo {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+  
+  .vendor-name {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pms-vendor-selector {
+    padding: 1.5rem;
+  }
+  
+  .vendor-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .vendor-card {
+    padding: 1rem;
+  }
+  
+  .vendor-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .vendor-logo {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .vendor-name {
+    font-size: 1rem;
+  }
+  
+  .vendor-description {
+    font-size: 0.8rem;
+  }
+  
+  .vendor-features li {
+    font-size: 0.75rem;
+  }
+  
+  .vendor-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .summary-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pms-vendor-selector {
+    padding: 1rem;
+  }
+  
+  .selector-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .selector-description {
+    font-size: 0.875rem;
+  }
+  
+  .vendor-card {
+    padding: 0.75rem;
+  }
+  
+  .popular-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .vendor-name {
+    font-size: 0.9rem;
+  }
+  
+  .vendor-category {
+    font-size: 0.7rem;
+  }
+  
+  .vendor-description {
+    font-size: 0.75rem;
+  }
+}
+
+/* Keyboard Navigation */
+.vendor-card:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.vendor-card:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Animation for selection */
+@keyframes selectPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.vendor-card.selected {
+  animation: selectPulse 0.3s ease-in-out;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .vendor-card {
+    border-width: 3px;
+  }
+  
+  .vendor-card.selected {
+    border-width: 3px;
+  }
+}
