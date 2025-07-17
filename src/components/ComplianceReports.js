@@ -191,6 +191,9 @@ const ComplianceReports = ({ currentView, onNavigate }) => {
             r.id === reportId ? { ...r, status: 'submitted' } : r
           ));
           break;
+        default:
+          addStatusMessage('success', `Action completed successfully for ${report.title}`);
+          break;
       }
     } else {
       addStatusMessage('error', `Failed to ${action.replace('_', ' ')} ${report.title}. Please try again.`);
