@@ -45,6 +45,9 @@ const PropertyManagementIntegration = ({ currentView, onNavigate }) => {
     maintenanceRequests: false
   });
 
+  // State for mobile sidebar
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   // Mock connection data for demo
   const mockConnectionData = {
     accountName: 'Sunset Manor Properties',
@@ -214,15 +217,31 @@ const PropertyManagementIntegration = ({ currentView, onNavigate }) => {
 
   return (
     <div className="property-management-integration">
-      <Sidebar currentView={currentView} onNavigate={onNavigate} />
+      <Sidebar 
+        currentView={currentView} 
+        onNavigate={onNavigate}
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
       
       <div className="integration-content">
         {/* Header */}
         <div className="integration-header">
-          <h1>Property Management Integration</h1>
-          <p className="header-subtitle">
-            Connect your EHR with popular Property Management Systems to streamline operations
-          </p>
+          <div className="header-content">
+            <button 
+              className="mobile-menu-btn"
+              onClick={() => setIsSidebarOpen(true)}
+              aria-label="Open menu"
+            >
+              ☰
+            </button>
+            <div className="title-section">
+              <h1>Property Management Integration</h1>
+              <p className="header-subtitle">
+                Connect your EHR with popular Property Management Systems to streamline operations
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Info Banner */}

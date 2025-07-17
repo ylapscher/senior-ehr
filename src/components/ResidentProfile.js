@@ -7,6 +7,7 @@ import IncidentReportModal from './IncidentReportModal';
 const ResidentProfile = ({ currentView, onNavigate }) => {
   const [activeTab, setActiveTab] = useState('care-plan');
   const [isIncidentModalOpen, setIsIncidentModalOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const resident = {
     id: 'RES-001',
@@ -153,9 +154,21 @@ const ResidentProfile = ({ currentView, onNavigate }) => {
 
   return (
     <div className="resident-profile">
-      <Sidebar currentView={currentView} onNavigate={onNavigate} />
+      <Sidebar 
+        currentView={currentView} 
+        onNavigate={onNavigate}
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
       <div className="profile-content">
         <div className="profile-header">
+          <button 
+            className="mobile-menu-btn"
+            onClick={() => setIsSidebarOpen(true)}
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
           <div className="resident-basic-info">
             <div className="resident-photo">
               {resident.photo}

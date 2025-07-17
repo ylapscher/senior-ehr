@@ -1,7 +1,7 @@
 import React from 'react';
 import './Sidebar.css';
 
-const Sidebar = ({ currentView, onNavigate }) => {
+const Sidebar = ({ currentView, onNavigate, isOpen, onClose }) => {
   const menuItems = [
     { id: 'dashboard', label: 'Dashboard', icon: '📊', view: 'dashboard' },
     { id: 'residents', label: 'Residents', icon: '👥', view: 'resident-profile' },
@@ -11,7 +11,9 @@ const Sidebar = ({ currentView, onNavigate }) => {
   ];
 
   return (
-    <div className="sidebar">
+    <>
+      {isOpen && <div className="sidebar-overlay" onClick={onClose}></div>}
+      <div className={`sidebar ${isOpen ? 'mobile-open' : ''}`}>
       <div className="sidebar-header">
         <h2>SeniorCare EHR</h2>
         <p>Executive Portal</p>
@@ -39,7 +41,8 @@ const Sidebar = ({ currentView, onNavigate }) => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

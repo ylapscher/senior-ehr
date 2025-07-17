@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ExecutiveDashboard.css';
 import Sidebar from './Sidebar';
 import MetricCard from './MetricCard';
 
 const ExecutiveDashboard = ({ currentView, onNavigate }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const metrics = [
     {
       id: 'occupancy',
@@ -45,10 +46,24 @@ const ExecutiveDashboard = ({ currentView, onNavigate }) => {
 
   return (
     <div className="executive-dashboard">
-      <Sidebar currentView={currentView} onNavigate={onNavigate} />
+      <Sidebar 
+        currentView={currentView} 
+        onNavigate={onNavigate}
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
       <div className="dashboard-content">
         <header className="dashboard-header">
-          <h1>Dashboard</h1>
+          <div className="header-left">
+            <button 
+              className="mobile-menu-btn"
+              onClick={() => setIsSidebarOpen(true)}
+              aria-label="Open menu"
+            >
+              ☰
+            </button>
+            <h1>Dashboard</h1>
+          </div>
           <div className="date-time">
             {new Date().toLocaleDateString('en-US', { 
               weekday: 'long', 

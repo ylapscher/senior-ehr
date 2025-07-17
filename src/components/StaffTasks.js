@@ -62,6 +62,7 @@ const INITIAL_TASKS = [
 const StaffTasks = ({ currentView, onNavigate }) => {
   const [tasks, setTasks] = useState(INITIAL_TASKS);
   const [isAddTaskModalOpen, setIsAddTaskModalOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Add new task to the list
   const handleAddTask = (newTask) => {
@@ -109,13 +110,29 @@ const StaffTasks = ({ currentView, onNavigate }) => {
 
   return (
     <div className="staff-tasks-page">
-      <Sidebar currentView={currentView} onNavigate={onNavigate} />
+      <Sidebar 
+        currentView={currentView} 
+        onNavigate={onNavigate}
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
       
       <div className="main-content">
         <div className="page-header">
           <div className="header-content">
-            <h1 className="page-title">Staff Tasks</h1>
-            <p className="page-subtitle">Manage and track daily tasks for your care team</p>
+            <div className="header-left">
+              <button 
+                className="mobile-menu-btn"
+                onClick={() => setIsSidebarOpen(true)}
+                aria-label="Open menu"
+              >
+                ☰
+              </button>
+              <div className="title-section">
+                <h1 className="page-title">Staff Tasks</h1>
+                <p className="page-subtitle">Manage and track daily tasks for your care team</p>
+              </div>
+            </div>
           </div>
           
           <button

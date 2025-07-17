@@ -111,6 +111,7 @@ const ComplianceReports = ({ currentView, onNavigate }) => {
   const [reports, setReports] = useState(mockReports);
   const [reportHistory, setReportHistory] = useState(mockHistory);
   const [statusMessages, setStatusMessages] = useState([]);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [filters, setFilters] = useState({
     reportType: 'all',
     dateRange: { startDate: '', endDate: '' },
@@ -240,10 +241,24 @@ const ComplianceReports = ({ currentView, onNavigate }) => {
 
   return (
     <div className="compliance-reports">
-      <Sidebar currentView={currentView} onNavigate={onNavigate} />
+      <Sidebar 
+        currentView={currentView} 
+        onNavigate={onNavigate}
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+      />
       <div className="reports-content">
         <div className="reports-header">
-          <h1>Compliance Reports</h1>
+          <div className="header-left">
+            <button 
+              className="mobile-menu-btn"
+              onClick={() => setIsSidebarOpen(true)}
+              aria-label="Open menu"
+            >
+              ☰
+            </button>
+            <h1>Compliance Reports</h1>
+          </div>
           <div className="header-actions">
             <button className="btn btn-primary">
               📊 Generate Report
