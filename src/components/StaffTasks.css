@@ -11,6 +11,7 @@
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  margin-left: 280px;
 }
 
 /* Page Header */
@@ -636,6 +637,7 @@
 @media (max-width: 1024px) {
   .main-content {
     padding: 1.5rem;
+    margin-left: 0;
   }
   
   .page-header {
