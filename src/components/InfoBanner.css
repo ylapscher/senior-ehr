@@ -228,10 +228,10 @@
   color: white;
 }
 
-.stat-label {
+.info-banner .stat-label {
   font-size: 0.875rem;
   margin-top: 0.5rem;
-  color: white;
+  color: white !important;
   opacity: 1;
   line-height: 1.2;
 }
@@ -417,7 +417,7 @@
     font-size: 1.5rem;
   }
   
-  .stat-label {
+  .info-banner .stat-label {
     font-size: 0.8rem;
   }
   
@@ -485,7 +485,7 @@
     font-size: 1.25rem;
   }
   
-  .stat-label {
+  .info-banner .stat-label {
     font-size: 0.75rem;
   }
   
