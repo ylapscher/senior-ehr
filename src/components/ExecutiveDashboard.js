@@ -3,7 +3,7 @@ import './ExecutiveDashboard.css';
 import Sidebar from './Sidebar';
 import MetricCard from './MetricCard';
 
-const ExecutiveDashboard = () => {
+const ExecutiveDashboard = ({ currentView, onNavigate }) => {
   const metrics = [
     {
       id: 'occupancy',
@@ -45,10 +45,10 @@ const ExecutiveDashboard = () => {
 
   return (
     <div className="executive-dashboard">
-      <Sidebar />
+      <Sidebar currentView={currentView} onNavigate={onNavigate} />
       <div className="dashboard-content">
         <header className="dashboard-header">
-          <h1>Executive Dashboard</h1>
+          <h1>Dashboard</h1>
           <div className="date-time">
             {new Date().toLocaleDateString('en-US', { 
               weekday: 'long', 

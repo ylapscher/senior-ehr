@@ -1,12 +1,12 @@
 import React from 'react';
 import './Sidebar.css';
 
-const Sidebar = () => {
+const Sidebar = ({ currentView, onNavigate }) => {
   const menuItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: '📊', active: true },
-    { id: 'residents', label: 'Residents', icon: '👥', active: false },
-    { id: 'staff-tasks', label: 'Staff Tasks', icon: '✓', active: false },
-    { id: 'reports', label: 'Reports', icon: '📈', active: false }
+    { id: 'dashboard', label: 'Dashboard', icon: '📊', view: 'dashboard' },
+    { id: 'residents', label: 'Residents', icon: '👥', view: 'resident-profile' },
+    { id: 'staff-tasks', label: 'Staff Tasks', icon: '✓', view: 'staff-tasks' },
+    { id: 'reports', label: 'Reports', icon: '📈', view: 'reports' }
   ];
 
   return (
@@ -20,7 +20,8 @@ const Sidebar = () => {
         {menuItems.map(item => (
           <div 
             key={item.id} 
-            className={`nav-item ${item.active ? 'active' : ''}`}
+            className={`nav-item ${currentView === item.view ? 'active' : ''}`}
+            onClick={() => onNavigate && onNavigate(item.view)}
           >
             <span className="nav-icon">{item.icon}</span>
             <span className="nav-label">{item.label}</span>
