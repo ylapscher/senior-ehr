@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import './ResidentProfile.css';
 import Sidebar from './Sidebar';
 import Timeline from './Timeline';
+import IncidentReportModal from './IncidentReportModal';
 
 const ResidentProfile = ({ currentView, onNavigate }) => {
   const [activeTab, setActiveTab] = useState('care-plan');
+  const [isIncidentModalOpen, setIsIncidentModalOpen] = useState(false);
 
   const resident = {
     id: 'RES-001',
@@ -184,7 +186,10 @@ const ResidentProfile = ({ currentView, onNavigate }) => {
             <button className="action-btn primary">
               📝 New Assessment
             </button>
-            <button className="action-btn secondary">
+            <button 
+              className="action-btn secondary"
+              onClick={() => setIsIncidentModalOpen(true)}
+            >
               ⚠️ Report Incident
             </button>
           </div>
@@ -213,6 +218,12 @@ const ResidentProfile = ({ currentView, onNavigate }) => {
           <Timeline />
         </div>
       </div>
+      
+      <IncidentReportModal
+        isOpen={isIncidentModalOpen}
+        onClose={() => setIsIncidentModalOpen(false)}
+        residentName={resident.name}
+      />
     </div>
   );
 };
