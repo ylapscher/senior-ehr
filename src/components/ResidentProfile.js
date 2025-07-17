@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ResidentProfile.css';
+import MobileNavbar from './MobileNavbar';
 import Sidebar from './Sidebar';
 import Timeline from './Timeline';
 import IncidentReportModal from './IncidentReportModal';
@@ -154,6 +155,12 @@ const ResidentProfile = ({ currentView, onNavigate }) => {
 
   return (
     <div className="resident-profile">
+      <MobileNavbar 
+        currentView={currentView} 
+        onNavigate={onNavigate}
+        isSidebarOpen={isSidebarOpen}
+        onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+      />
       <Sidebar 
         currentView={currentView} 
         onNavigate={onNavigate}
@@ -162,13 +169,6 @@ const ResidentProfile = ({ currentView, onNavigate }) => {
       />
       <div className="profile-content">
         <div className="profile-header">
-          <button 
-            className="mobile-menu-btn"
-            onClick={() => setIsSidebarOpen(true)}
-            aria-label="Open menu"
-          >
-            ☰
-          </button>
           <div className="resident-basic-info">
             <div className="resident-photo">
               {resident.photo}

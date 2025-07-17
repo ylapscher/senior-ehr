@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './ComplianceReports.css';
+import MobileNavbar from './MobileNavbar';
 import Sidebar from './Sidebar';
 
 const ComplianceReports = ({ currentView, onNavigate }) => {
@@ -241,6 +242,12 @@ const ComplianceReports = ({ currentView, onNavigate }) => {
 
   return (
     <div className="compliance-reports">
+      <MobileNavbar 
+        currentView={currentView} 
+        onNavigate={onNavigate}
+        isSidebarOpen={isSidebarOpen}
+        onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+      />
       <Sidebar 
         currentView={currentView} 
         onNavigate={onNavigate}
@@ -250,13 +257,6 @@ const ComplianceReports = ({ currentView, onNavigate }) => {
       <div className="reports-content">
         <div className="reports-header">
           <div className="header-left">
-            <button 
-              className="mobile-menu-btn"
-              onClick={() => setIsSidebarOpen(true)}
-              aria-label="Open menu"
-            >
-              ☰
-            </button>
             <h1>Compliance Reports</h1>
           </div>
           <div className="header-actions">

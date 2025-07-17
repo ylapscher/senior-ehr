@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './PropertyManagementIntegration.css';
+import MobileNavbar from './MobileNavbar';
 import Sidebar from './Sidebar';
 import PMSVendorSelector from './PMSVendorSelector';
 import ConnectionForm from './ConnectionForm';
@@ -217,6 +218,12 @@ const PropertyManagementIntegration = ({ currentView, onNavigate }) => {
 
   return (
     <div className="property-management-integration">
+      <MobileNavbar 
+        currentView={currentView} 
+        onNavigate={onNavigate}
+        isSidebarOpen={isSidebarOpen}
+        onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+      />
       <Sidebar 
         currentView={currentView} 
         onNavigate={onNavigate}
@@ -228,13 +235,6 @@ const PropertyManagementIntegration = ({ currentView, onNavigate }) => {
         {/* Header */}
         <div className="integration-header">
           <div className="header-content">
-            <button 
-              className="mobile-menu-btn"
-              onClick={() => setIsSidebarOpen(true)}
-              aria-label="Open menu"
-            >
-              ☰
-            </button>
             <div className="title-section">
               <h1>Property Management Integration</h1>
               <p className="header-subtitle">

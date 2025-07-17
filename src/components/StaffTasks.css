@@ -28,29 +28,6 @@
   flex: 1;
 }
 
-.mobile-menu-btn {
-  display: none;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  z-index: 1001;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  font-size: 1.5rem;
-  color: #1f2937;
-  cursor: pointer;
-  padding: 0.75rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  transition: all 0.2s ease;
-}
-
-.mobile-menu-btn:hover {
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  transform: translateY(-1px);
-}
 
 .page-title {
   font-size: 2rem;
@@ -659,14 +636,10 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .mobile-menu-btn {
-    display: block;
-  }
-  
   .main-content {
     padding: 1.5rem;
     margin-left: 0;
-    padding-top: 5rem;
+    padding-top: 80px;
   }
   
   .page-header {

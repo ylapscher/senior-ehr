@@ -17,30 +17,6 @@
   margin-bottom: 2rem;
 }
 
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.mobile-menu-btn {
-  display: none;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid #e5e7eb;
-  font-size: 1.5rem;
-  color: #1f2937;
-  cursor: pointer;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-}
-
-.mobile-menu-btn:hover {
-  background-color: rgba(249, 250, 251, 0.95);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
 
 .dashboard-header h1 {
   font-size: 2rem;
@@ -63,16 +39,8 @@
 }
 
 @media (max-width: 1024px) {
-  .mobile-menu-btn {
-    display: block;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1001;
-  }
-  
   .dashboard-content {
-    padding-top: 5rem;
+    padding-top: 80px;
   }
   
   .dashboard-content {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './StaffTasks.css';
+import MobileNavbar from './MobileNavbar';
 import Sidebar from './Sidebar';
 import TaskList from './TaskList';
 import AddTaskForm from './AddTaskForm';
@@ -110,6 +111,12 @@ const StaffTasks = ({ currentView, onNavigate }) => {
 
   return (
     <div className="staff-tasks-page">
+      <MobileNavbar 
+        currentView={currentView} 
+        onNavigate={onNavigate}
+        isSidebarOpen={isSidebarOpen}
+        onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+      />
       <Sidebar 
         currentView={currentView} 
         onNavigate={onNavigate}
@@ -121,13 +128,6 @@ const StaffTasks = ({ currentView, onNavigate }) => {
         <div className="page-header">
           <div className="header-content">
             <div className="header-left">
-              <button 
-                className="mobile-menu-btn"
-                onClick={() => setIsSidebarOpen(true)}
-                aria-label="Open menu"
-              >
-                ☰
-              </button>
               <div className="title-section">
                 <h1 className="page-title">Staff Tasks</h1>
                 <p className="page-subtitle">Manage and track daily tasks for your care team</p>
