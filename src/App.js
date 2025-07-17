@@ -4,6 +4,7 @@ import ExecutiveDashboard from './components/ExecutiveDashboard';
 import ResidentProfile from './components/ResidentProfile';
 import ComplianceReports from './components/ComplianceReports';
 import PropertyManagementIntegration from './components/PropertyManagementIntegration';
+import StaffTasks from './components/StaffTasks';
 
 function App() {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -18,6 +19,8 @@ function App() {
         return <ExecutiveDashboard currentView={currentView} onNavigate={handleNavigate} />;
       case 'resident-profile':
         return <ResidentProfile currentView={currentView} onNavigate={handleNavigate} />;
+      case 'staff-tasks':
+        return <StaffTasks currentView={currentView} onNavigate={handleNavigate} />;
       case 'reports':
         return <ComplianceReports currentView={currentView} onNavigate={handleNavigate} />;
       case 'property-management':
